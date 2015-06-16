@@ -7,5 +7,5 @@ In order to build the project run:
 
 In order to run the application run:
 
-```java -cp target/profiling-samples-1.0-SNAPSHOT.jar SafePointBias```
+```java -cp target/profiling-samples-1.0-SNAPSHOT.jar com.monotonic.profiling_samples.SafePointBias```
 

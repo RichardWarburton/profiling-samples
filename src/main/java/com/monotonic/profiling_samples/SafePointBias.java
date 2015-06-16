@@ -1,4 +1,5 @@
-import java.lang.management.ManagementFactory;
+package com.monotonic.profiling_samples;
+
 import java.util.Random;
 
 public class SafePointBias
@@ -10,7 +11,7 @@ public class SafePointBias
 
     public static void main(String[] args)
     {
-        System.out.println(ManagementFactory.getRuntimeMXBean().getName());
+        Util.printPid();
         init();
         outer();
         System.out.println(array[new Random().nextInt(SIZE)]);
@@ -34,9 +35,9 @@ public class SafePointBias
 
     private static void hotMethod(final int i)
     {
+        final int[] array = SafePointBias.array;
         for (int k = 0; k < N; k++)
         {
-            final int[] array = SafePointBias.array;
             final int index = i % SIZE;
             for (int j = index; j < SIZE; j++)
             {
